@@ -23,17 +23,21 @@ data(){
 methods:{
     submitUser(){
         axios
-        .post("http://localhost:3000/login/auth",{
-            userName:this.userName,
-            password:this.password
-            // userName:"app_superuser",
-            // password:"#i4mth3sup3rus3r#",
+        .post("http://localhost:3000/login/create",{
+           // userName:this.userName,
+            // password:this.password
+            userName:"app_superuser",
+            password:"#i4mth3sup3rus3r#",
+            email:"sugarcrunchdude@gmail.com",
+            accessRights:"admin",
+
             
         })
         .then((res)=>{
-            if(res.data.message==="authentication successful"){
-                this.$emit("authentication");
-            }
+            //if(res.data.message==="authentication successful"){
+            //    this.$emit("authentication");
+            //}
+            console.log(res)
         })
         .catch((err)=>{console.log(err)});
     }

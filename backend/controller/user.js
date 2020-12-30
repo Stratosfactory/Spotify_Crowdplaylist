@@ -1,4 +1,5 @@
 const User = require("../models/user")
+const bcrypt = require("bcryptjs")
 
 exports.createUser = ((req, res, next) => {
     const userName = req.body.userName
@@ -6,21 +7,27 @@ exports.createUser = ((req, res, next) => {
     const password = req.body.password
     const accessRights = req.body.accessRights
 
-    const user = new User({
-        username: userName,
-        password: password,
-        email: email,
-        accessRights: accessRights,
+    bcrypt
+        .hash(password, 12)
+        .then((hashedPw) => {
 
-    });
+            const user = new User({
+                username: userName,
+                password: hashedPw,
+                email: email,
+                accessRights: accessRights,
 
-    user.save()
-        .then((res) => { console.log("User Created") })
+            });
+
+            return user.save();
+        })
+        .then((result) => {
+            console.log(userName + " User Created")
+            res.status(201).json({
+                message: userName + " created as new User"
+            })
+        })
         .catch((err) => console.log(err))
-
-    res.status(200).json({
-        message: userName + " created as new User"
-    });
 
 
 });
