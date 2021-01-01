@@ -1,5 +1,6 @@
 const User = require("../models/user")
 const bcrypt = require("bcryptjs")
+const webtoken = require("jsonwebtoken")
 
 exports.createUser = ((req, res, next) => {
     const userName = req.body.userName
@@ -35,6 +36,7 @@ exports.createUser = ((req, res, next) => {
 exports.authUser = ((req, res, next) => {
     const userName = req.body.userName
     const password = req.body.password
+    let loadedUser
 
     User.findOne({ username: userName })
         .then((user) => {
@@ -45,12 +47,26 @@ exports.authUser = ((req, res, next) => {
 
             if (!user) {
                 throw error;
-            } else if (user.password != password) {
-                throw error
-            } else {
-                res.status(202).json({
-                    message: "authentication successful"
+            }
+            loadedUser = user
+            return bcrypt.compare(password, user.password)
+
+        })
+        .then((passwordCorrect) => {
+            if (!passwordCorrect) {
+                res.status(401).json({
+                    message: "Invalid Password"
                 })
+            } else {
+                const token = webtoken.sign({
+                    email: loadedUser.email,
+                    userName: loadedUser.username
+                }, "theserverssecret1337", { expiresIn: "1h" });
+
+                res.status(201).json({
+                    token: token
+                })
+
             }
 
         })

@@ -2,11 +2,13 @@ const express = require("express");
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 
+
 const app = express();
 
 const connectorRoutes = require("./routes/connector");
 const feedRoutes = require("./routes/feed");
 const userRoutes = require("./routes/user");
+const { JsonWebTokenError } = require("jsonwebtoken");
 
 app.use(bodyParser.json());
 

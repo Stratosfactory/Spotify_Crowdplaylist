@@ -1,7 +1,8 @@
 <template>
   <div>
-    <login-form @authentication="authComplete()"></login-form>
+    <login-form @authentication="authComplete"></login-form>
     <result-display v-if="authentication"></result-display>
+    
   </div>
 </template>
 
@@ -20,7 +21,7 @@ export default {
     }
   },
   methods: {
-    authComplete() {this.authentication=true},
+    authComplete(validation) {this.authentication=validation},
   },
 };
 </script>
