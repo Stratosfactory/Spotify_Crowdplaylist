@@ -43,7 +43,7 @@ export default {
   methods: {
     getPosts(number) {
       axios
-        .get("http://localhost:3000/feed/posts")
+        .get("https://crowdplaylist.herokuapp.com/feed/posts")
         .then((res) => {
           let numberElements = 0
           if(number >= res.data.posts.length || number ===0){
@@ -60,7 +60,7 @@ export default {
         });
     },
     likeElement(post){
-      axios.post("http://localhost:3000/feed/like",
+      axios.post("https://crowdplaylist.herokuapp.com/feed/like",
       {
         _id:post._id,
         likes:post.likes+1

@@ -24,7 +24,7 @@ export default {
   methods: {
     submitUser() {
       axios
-        .post("http://localhost:3000/login/auth", {
+        .post("https://crowdplaylist.herokuapp.com/login/auth", {
           userName: this.userName,
           password: this.password,
         })

@@ -2,8 +2,9 @@
  <div class="navbar">
     
    
-    
+    <img src="../../../public/Stratosfactory.svg" class="logo">
     <router-link to="/">Home</router-link>
+    
     <router-link to="/admin">Admin Portal</router-link>
  </div>
 </template>
@@ -49,4 +50,18 @@ a.router-link-active{
     box-shadow: 0px 7px 12px 2px #492280;
 }
 
+.logo{
+    object-fit:cover;
+    width: 13%;
+   
+}
+
+.logo:hover{
+    transform: scale(1.05);
+}
+
+@media(max-width: 1000px){
+  .logo{
+    width: 23%;
+}}
 </style>

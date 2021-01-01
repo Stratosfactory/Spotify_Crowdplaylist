@@ -27,6 +27,8 @@ app.use("/login", userRoutes);
 
 mongoose.set('useUnifiedTopology', true);
 
-mongoose.connect("mongodb+srv://Database_RW_User:6IdTFX4QYiTUuD4p@cluster-alpha.7pxq4.mongodb.net/userfeed?retryWrites=true&w=majority", { useNewUrlParser: true })
-    .then((result) => { app.listen(3000) })
+
+
+mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster-alpha.7pxq4.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}`, { useNewUrlParser: true })
+    .then((result) => { app.listen(process.env.PORT || 3000) })
     .catch((err) => { console.log(err) })

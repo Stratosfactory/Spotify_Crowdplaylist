@@ -99,7 +99,7 @@ export default {
     },
     authentication: function () {
       axios
-        .get("http://localhost:3000/connect/authorization")
+        .get("https://crowdplaylist.herokuapp.com/connect/authorization")
 
         .then((res) => {
           this.token = res.data.access_token;
@@ -111,7 +111,7 @@ export default {
     },
     submitPost() {
       axios
-        .post("http://localhost:3000/feed/post", {
+        .post("https://crowdplaylist.herokuapp.com/feed/post", {
           id:
             new Date().toDateString() + "_" + Math.floor(Math.random() * 9999),
           userName: this.userName,

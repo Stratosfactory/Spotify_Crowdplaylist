@@ -3,9 +3,13 @@
     "version": "1.0.0",
     "description": "Backend server for vue app",
     "main": "app.js",
+    "engines": {
+        "node": "14.5.0"
+    },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon app.js"
+        "start": "node app.js",
+        "serve": "nodemon app.js"
     },
     "author": "Stratosfactory",
     "license": "ISC",

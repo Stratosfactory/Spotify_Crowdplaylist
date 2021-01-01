@@ -29,7 +29,7 @@ export default {
     deleteEntry: function (id) {
       const token = localStorage.getItem("token")
       axios
-        .post("http://localhost:3000/feed/delete", {
+        .post("https://crowdplaylist.herokuapp.com/feed/delete", {
           id: id,
         },{headers:{Authorization:"Bearer " + token}})
         .then(this.getPosts)
@@ -37,7 +37,7 @@ export default {
     },
     getPosts: function () {
       axios
-        .get("http://localhost:3000/feed/posts")
+        .get("https://crowdplaylist.herokuapp.com/feed/posts")
         .then((res) => {
           this.responses = res.data.posts;
         })

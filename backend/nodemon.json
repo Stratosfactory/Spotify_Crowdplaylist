@@ -1,0 +1,7 @@
+{
+    "env": {
+        "MONGO_USER": "Database_RW_User",
+        "MONGO_PASSWORD": "6IdTFX4QYiTUuD4p",
+        "MONGO_DEFAULT_DATABASE": "userfeed?retryWrites=true&w=majority"
+    }
+}
