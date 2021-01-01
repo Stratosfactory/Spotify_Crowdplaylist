@@ -27,10 +27,11 @@ export default {
   },
   methods: {
     deleteEntry: function (id) {
+      const token = localStorage.getItem("token")
       axios
         .post("http://localhost:3000/feed/delete", {
           id: id,
-        })
+        },{headers:{Authorization:"Bearer " + token}})
         .then(this.getPosts)
         .catch((err) => console.log(err));
     },

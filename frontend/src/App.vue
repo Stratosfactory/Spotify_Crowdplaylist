@@ -1,5 +1,6 @@
 <template>
 <div>
+   
   <navigation></navigation>
   <router-view/>
   </div>
@@ -39,5 +40,10 @@ export default{
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.logo{
+  height: 100px;
+  width: 100px;
 }
 </style>

@@ -1,11 +1,15 @@
 <template>
  <div class="navbar">
+    
+   
+    
     <router-link to="/">Home</router-link>
     <router-link to="/admin">Admin Portal</router-link>
  </div>
 </template>
 
 <script>
+
 export default {
 
 }
@@ -16,7 +20,7 @@ export default {
 .navbar{
     display:flex;
     background: rgb(91, 182, 132);
-    align-items:stretch;
+    align-items:center;
     align-content: space-evenly;
     justify-content:space-evenly;
 }
@@ -30,6 +34,7 @@ export default {
     margin: 1% 1% 1% 1%;
     font-size: 20px;
     text-decoration: none;
+
 }
 
 .navbar a:hover{
@@ -43,6 +48,5 @@ a.router-link-active{
     border: rgb(153, 0, 255) 1px solid;
     box-shadow: 0px 7px 12px 2px #492280;
 }
-
 
 </style>
