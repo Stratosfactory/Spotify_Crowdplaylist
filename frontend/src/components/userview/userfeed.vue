@@ -1,6 +1,6 @@
 <template>
   <div class="menu">
-    <h2>What other users posted</h2>
+    <h2>Was andere Gäste hinzugefügt haben</h2>
     
     <section class="container">
       <div v-for="post in posts" :key="post._id" class="element">
@@ -22,7 +22,7 @@
       </div>
       
     </section>
-    <Button @click.once="getPosts()">LOAD ALL POSTS</Button>
+    <Button @click.once="getPosts()">ALLE ANZEIGEN</Button>
   </div>
 </template>
 

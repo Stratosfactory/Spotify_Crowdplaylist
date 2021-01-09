@@ -1,8 +1,8 @@
 <template>
 
   <div class="menu">
-    <h2>Spotify results</h2>
-    <p>Select a result from below</p>
+    <h2>Suchergebnisse</h2>
+    <p>Wähle ein Lied aus der Suchmaske</p>
     <div class="results">
       <div v-for="item in spotifyResponse" :key="item.id" :class="{selected:item.selected}" @click="selectElement(item.id, )">
         <img :src="item.image" />

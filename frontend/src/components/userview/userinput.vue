@@ -2,37 +2,37 @@
   <div class="menu">
     <h2>Playlist Menu</h2>
     <div v-if="authorizationComplete === false">
-      <p>Click Button to obtain get valid permission from Spotify</p>
-      <Button @click="authentication">Request Token</Button>
+      <p>Auf Button drücken um nach einem Titel zu suchen und diesen zur Playlist hinzuzufügen</p>
+      <Button @click="authentication">Lied hinzufügen</Button>
       <br />
     </div>
     <div v-else>
       <p>
-        Search Spotify for Artist, Song or Album and click the search button
+        Gib Artist, Lied oder Album ein und klicke auf Suchen
       </p>
 
       <div class="p-inputgroup">
         <InputText
-          placeholder="Search Song, Artist or Album"
+          placeholder="Suche nach Lied, Artist oder Album"
           v-model="query"
           @keyup.enter="searchSpotify"
         />
         <Button icon="pi pi-search" class="p-button" @click="searchSpotify" />
       </div>
-      <p>Type in your user name</p>
-      <InputText placeholder="Your Name" v-model="userName" />
-      <p>Add a comment and let us know more about the song you have choosen</p>
+      <p>Teile uns deinen Namen mit</p>
+      <InputText placeholder="Dein Name" v-model="userName" />
+      <p>[OPTIONAL] Füge einen Kommentar hinzu</p>
       <Textarea
         v-model="comment"
         :autoResize="true"
         rows="3"
         cols="30"
-        placeholder="Your Comment"
+        placeholder="Dein Kommentar"
         maxlength="200"
       />
-      <p>Click to submit your post</p>
+      <p>Klicke abschließend auf Musikwunsch abschicken</p>
       <Button
-        label="Submit Post"
+        label="Abschicken"
         icon="pi pi-check-circle"
         iconPos="right"
         :disabled="enableButton"
