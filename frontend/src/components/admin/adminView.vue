@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="adminView">
     <login-form @authentication="authComplete"></login-form>
     <result-display v-if="authentication"></result-display>
     
@@ -27,4 +27,8 @@ export default {
 </script>
 
 <style>
+.adminView{
+  background:rgba(243, 243, 243, 0.918);
+  padding: 2% 2%;
+}
 </style>

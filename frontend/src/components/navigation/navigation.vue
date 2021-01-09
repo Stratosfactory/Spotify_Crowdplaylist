@@ -20,7 +20,7 @@ export default {
 
 .navbar{
     display:flex;
-    background: rgb(91, 182, 132);
+    background: rgba(91, 182, 132, 0.932);
     align-items:center;
     align-content: space-evenly;
     justify-content:space-evenly;

@@ -70,6 +70,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  
 }
 
 .applayout-init {
@@ -79,6 +80,7 @@ export default {
     "menu menu"
     "feed feed";
   gap: 10px;
+  background:rgba(243, 243, 243, 0.918);
 }
 
 .applayout {
@@ -88,6 +90,7 @@ export default {
     "menu  datalake"
     "feed feed";
   gap: 10px;
+  background:rgba(243, 243, 243, 0.918);
 }
 
 @keyframes changeGrid {
